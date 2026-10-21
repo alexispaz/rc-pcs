@@ -1,0 +1,12 @@
+# Config for ip-fija-con-dhcp.sh. Copy to ~/.config/maquina/ip-fija.conf and fill in.
+# The values below are documentation addresses (RFC 5737), not real ones.
+
+# Fixed address with its prefix length, and that address's gateway (required)
+ADDR=192.0.2.10/24
+GW=192.0.2.1
+
+# Optional: interface (default: the one with the default route),
+# routing table (default 100), NetworkManager profile (default: the active one on the interface)
+#DEV=enp3s0
+#TABLE=100
+#CON=dhcp
