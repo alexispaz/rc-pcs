@@ -1,0 +1,11 @@
+# Config for openfortivpn.sh, in openfortivpn's own format (man openfortivpn).
+# Copy to ~/.config/maquina/openfortivpn.conf and fill in; openfortivpn.sh install
+# puts it in /etc/openfortivpn/config. Placeholder values, not real ones.
+
+host = vpn.example.org
+port = 443
+username = vpnuser
+# The server certificate's sha256, from the error openfortivpn prints the
+# first time it connects to an unknown server.
+trusted-cert = 0000000000000000000000000000000000000000000000000000000000000000
+# Leave the password out: openfortivpn asks for it when connecting.

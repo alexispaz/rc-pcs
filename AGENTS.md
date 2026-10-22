@@ -16,3 +16,8 @@ What the repo is: README.md. Part of the `~/work/rc` group (see its AGENTS.md).
   interface from the default route, and for status/remove reads the address
   and gateway back from the profile. Dry runs there give the same commands
   as the original for apply, remove, test and untest.
+- `openfortivpn.sh` (branch `claude/vpn`, Alexis 2026-10-21 "si, lo vamos a
+  hacer asi"): installs the package and copies the config to /etc. Tested only
+  with stub sudo/pacman/install and a scratch target (scratchpad `vpn/`):
+  fresh install, rerun, different config with and without -F, missing config;
+  a password line is never printed. Never run for real here.

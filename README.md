@@ -27,3 +27,23 @@ IP is answered through its own gateway. Useful when a network blocks something
 `./ip-fija-con-dhcp.sh -h` lists the options.
 
 Requires NetworkManager (`nmcli`), iproute2, python3 and sudo.
+
+### `openfortivpn.sh`
+
+Installs [openfortivpn](https://github.com/adrienverge/openfortivpn) and its
+config, so that `sudo openfortivpn` connects with no arguments. The config is
+kept as `~/.config/maquina/openfortivpn.conf`, in openfortivpn's own format,
+and copied to `/etc/openfortivpn/config` (root, mode 600).
+
+    cp openfortivpn.conf.example ~/.config/maquina/openfortivpn.conf   # then edit it
+    ./openfortivpn.sh status
+    ./openfortivpn.sh -n install    # print the commands, change nothing
+    ./openfortivpn.sh install       # pacman -S if missing, then copy the config
+    sudo openfortivpn               # connect
+
+Leave the password out of the config: openfortivpn asks for it. A different
+config already in `/etc` is never replaced without `-F`, which keeps a copy as
+`config.bak`; `password` lines are never printed, and are ignored when
+comparing, so a password added by hand in `/etc` stays.
+
+Requires pacman (Arch) and sudo.
